@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@color/colorPrimary"
+    android:elevation="2dp"
+    android:fillViewport="true"
+    tools:context=".ui.CreateEditFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_check"
+
+            />
+
+
+        <EditText
+            android:id="@+id/note_title_edit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:hint="@string/note_title_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLength="28"
+            android:maxLines="1"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/favorite_toggle_button_edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/favorite_toggle_button_edit"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/favorite_time_margin"
+            android:background="@drawable/ic_unchecked_star"
+            android:textOff=""
+            android:textOn=""
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/note_date_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/favorite_time_margin"
+            android:ellipsize="end"
+            android:hint="@string/sample_time"
+            android:importantForAutofill="no"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:textSize="10sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="@+id/favorite_toggle_button_edit"
+            app:layout_constraintTop_toBottomOf="@+id/favorite_toggle_button_edit"
+            tools:ignore="SmallSp" />
+        <TextView
+            android:id="@+id/ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="@string/ago"
+            android:importantForAutofill="no"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textSize="10sp"
+
+            app:layout_constraintEnd_toEndOf="@+id/note_date_edit"
+            app:layout_constraintStart_toStartOf="@+id/note_date_edit"
+            app:layout_constraintTop_toBottomOf="@+id/note_date_edit"
+            tools:ignore="SmallSp" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/note_date_edit"
+            app:layout_constraintStart_toStartOf="@+id/note_title_edit"
+            app:layout_constraintTop_toBottomOf="@+id/note_title_edit"
+            android:fillViewport="true"
+            >
+
+            <EditText
+                android:id="@+id/note_text_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="@string/note_hint"
+                android:importantForAutofill="no"
+
+                android:inputType="textMultiLine"
+
+                android:isScrollContainer="true"
+
+                android:scrollbars="vertical"
+                />
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
